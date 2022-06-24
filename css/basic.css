@@ -1,0 +1,156 @@
+@charset "UTF-8"    ;
+
+a{ color: inherit;}
+body {font-family: Arial, Helvetica, sans-serif;}
+ul:after, .header_in:after, #contents:after  {display: block; content: ""; clear: both;}
+
+header {
+    background:#666;
+    color: #fff;
+}
+    .header_in {
+        position: relative;
+        width: 1240px;
+        height: 100px;
+        margin: auto;
+        padding: 0 20px;
+    }
+    h1 {
+        float: left;
+        line-height: 100px;
+    }
+
+    nav {
+        position: absolute;
+        left: 50%;
+        margin-left: -250px;
+    }
+    nav ul {}
+    nav li {
+        float: left;
+    }
+    nav a {
+        display: block;
+        line-height: 100px;
+        margin: 0 15px;
+        font-size: 18px;
+    }
+    nav button{
+        display: none;
+    }
+    .dark {
+        display: none;
+        position:fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+    }
+
+    .allBtn {
+        display: none;
+    }
+    .sign {
+        float: right;
+        line-height: 100px;
+    }
+
+#visual {
+    width: 1240px; height: 500px;
+    margin: auto;
+    background: #aaa;
+}
+#contents {
+    width: 1240px; margin: auto;
+}
+#contents > div {
+    width: 25%; height: 300px;
+    float: left;
+}
+    .con1 {background: lightblue;}
+    .con2 {background: lightcoral;}
+    .con3 {background: lightgreen;}
+    .con4 {background: lightgoldenrodyellow}
+
+footer{
+    background: #cccc;
+}
+    .footer_in {
+        width: 1240px;
+        height: 50px;
+        margin: auto;
+        padding: 20px;
+        text-align: right;
+    }
+
+/* 1240px보다 작을 때 */
+@media (max-width:1240px){
+    .header_in {width: 100%;}
+    #visual {
+        width: 100%; height: 500px;
+    }
+    #contents {
+        width: 100%;
+    }
+    #contents > div {
+        width: 50%; height: 300px;
+        float: left;
+    }
+    .footer_in {
+        width: 100%;
+    }
+}
+
+/* 960px보다 작을 때 */
+@media (max-width:960px){
+    h1 {font-size: 20px;}
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+    nav {margin-left: -150px;}
+    .sign span {display: none;}
+}
+
+/* 720px보다 작을 때 */
+@media (max-width:720px){
+    nav{
+        position: fixed;
+        left: -100%; margin-left: 0; top: 0;bottom: 0;
+        background: #fff;
+        width: 320px;
+        padding: 50px 0 0 20px;
+        z-index: 10;
+    }
+    nav li {float: none;}
+    nav a{
+        line-height: 40px; margin: 0; 
+        font-size: 16px;
+        color: #000;
+    }
+    nav button{
+        display: block;
+        position: absolute;
+        right: 10px; top: 10px;
+    }
+    .allBtn{
+        display: block;
+        float: left;
+        line-height: 50px;
+    }
+    .header_in{position:static;height: 50px;}
+    h1 {
+        float: none;
+        line-height: 50px;
+        position: absolute;
+        left: 50%; transform:translate(-50%);
+    }
+    .sign{
+        line-height: 50px;
+    }
+    #contents > div {
+        width: 100%; height: 200px;
+        float: none;
+    }
+    .footer_in {
+        text-align: center;
+    }
+}
